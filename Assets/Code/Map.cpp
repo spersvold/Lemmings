@@ -7,7 +7,7 @@ Map::Map(){
 	pathTilesets = "";
 	sizeTile = 0;
 
-	tinyManager = tinyManager::getInstanceTinyManager();
+	tInstance = tinyManager::getInstanceTinyManager();
 }
 
 Map::~Map(){
@@ -22,9 +22,9 @@ void Map::init(int x, int y, bool mapTMX, const char* fileMap, const char* layer
 	idFileMap = NULL;
 	this->pathTilesets = pathTilesets;
 	sizeTile = 0;
-	
-	tinyManager->Init();
-	tinyManager->LoadTMX(fileMap, layerCollision);
+
+	tInstance->Init();
+	tInstance->LoadTMX(fileMap, layerCollision);
 	if (mapTMX){
 		initMapTMX(x, y, numLayers, haveSpacingTileset, numTilesets, srcX, srcY);
 	}
@@ -33,25 +33,25 @@ void Map::init(int x, int y, bool mapTMX, const char* fileMap, const char* layer
 		Element::init(x, y, fileMap, false, srcX, srcY, w, h, 1, 1);
 	}
 
-	tinyManager->DestroyTMX();
+	tInstance->DestroyTMX();
 }
 
 void Map::initMapTMX(const int x, const int y, const int numLayers, const bool haveSpacingTileset, const int numTilesets, const int srcX, const int srcY) {
 	loadMapAndTilesets(x, y, numLayers, haveSpacingTileset, numTilesets);
-	sizeTile = tinyManager->GetTileSize();
-	mapCollision = tinyManager->GetLoadedMapCollision();
+	sizeTile = tInstance->GetTileSize();
+	mapCollision = tInstance->GetLoadedMapCollision();
 
-	Element::init(x, y, NULL, false, srcX, srcY, tinyManager->GetMapWidth(), tinyManager->GetMapHeight(), 1, 1);
+	Element::init(x, y, NULL, false, srcX, srcY, tInstance->GetMapWidth(), tInstance->GetMapHeight(), 1, 1);
 }
 
 void Map::loadMapAndTilesets(const int x, const int y, const int numLayers, const bool haveSpacingTileset, const int numTilesets) {
 	for (int i = 0; i < numLayers; i++) {
-		vector <vector<int>> map = tinyManager->GetLoadedMap(i);
+		vector <vector<int>> map = tInstance->GetLoadedMap(i);
 		if (map.empty())
 			continue;
 
 		for (int currNumTilesets = 0; currNumTilesets < numTilesets; currNumTilesets++) {
-			tinyManager::Tileset* tileSet = tinyManager->GetLoadedTileset(currNumTilesets, haveSpacingTileset, map, x, y);
+			tinyManager::Tileset* tileSet = tInstance->GetLoadedTileset(currNumTilesets, haveSpacingTileset, map, x, y);
 			tilesets.push_back(tileSet);
 		}
 		setTilesetImgID();

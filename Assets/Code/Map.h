@@ -20,7 +20,7 @@ private:
 	vector <vector<int>> mapCollision; // Vector with the X-Y dimensions of the collision map. It is used to see if there is any
 									   // impediment to the Lemmings scrolling at X point on the map.
 
-	tinyManager* tinyManager;
+	tinyManager* tInstance;
 
 public:
 	Map();
