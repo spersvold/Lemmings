@@ -222,7 +222,7 @@ void SceneGame::updateActions()
 	const int ACTION = actions->update();
 	switch ((Actions::ActionEnum)ACTION)
 	{
-	case -1:
+	case Actions::NONE: // No Action, return immediately, do nothing
 		break;
 	case Actions::REST_VEL_SPAWN:
 		actions->decrementVelocitySkill();
