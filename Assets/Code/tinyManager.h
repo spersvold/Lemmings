@@ -1,8 +1,8 @@
 #ifndef TINYMANAGER_H
 #define TINYMANAGER_H
 
-#include "TinyXML\tinyxml.h"
-#include "SDL\VideoManager.h"
+#include "TinyXML/tinyxml.h"
+#include "SDL/VideoManager.h"
 #include <iostream>
 #include <string>
 #include <vector>

@@ -150,12 +150,12 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)Libraries\SDL2_mixer\include;$(SolutionDir)Libraries\SDL2_image\include;$(SolutionDir)Libraries\SDL2\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Assets\Code;$(SolutionDir)Libraries\SDL2_mixer\include;$(SolutionDir)Libraries\SDL2_image\include;$(SolutionDir)Libraries\SDL2\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Libraries\SDL2_mixer\lib\x64;$(SolutionDir)Libraries\SDL2_image\lib\x64;$(SolutionDir)Libraries\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)Libraries\SDL2_mixer\include;$(SolutionDir)Libraries\SDL2_image\include;$(SolutionDir)Libraries\SDL2\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Libraries\SDL2_mixer\include;$(SolutionDir)Libraries\SDL2_image\include;$(SolutionDir)Libraries\SDL2\include;$(SolutionDir)Assets\Code;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Libraries\SDL2_mixer\lib\x64;$(SolutionDir)Libraries\SDL2_image\lib\x64;$(SolutionDir)Libraries\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

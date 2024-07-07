@@ -1,6 +1,6 @@
 #include "VideoManager.h"
 #include "ResourceManager.h"
-#include "..\Utils.h"
+#include "Utils.h"
 
 VideoManager *VideoManager::vInstance = NULL;
 

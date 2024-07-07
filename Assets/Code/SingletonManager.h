@@ -1,10 +1,10 @@
 #ifndef SINGLETONMANAGER_H
 #define SINGLETONMANAGER_H
 
-#include "SDL\InputManager.h"
-#include "SDL\VideoManager.h"
-#include "SDL\AudioManager.h"
-#include "SDL\ResourceManager.h"
+#include "SDL/InputManager.h"
+#include "SDL/VideoManager.h"
+#include "SDL/AudioManager.h"
+#include "SDL/ResourceManager.h"
 
 class SingletonManager
 {
